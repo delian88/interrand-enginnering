@@ -14,7 +14,7 @@ import { Service, Leader, Project } from './types.ts';
 
 export const HERO_SLIDES = [
   {
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=2000',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2000',
     welcome: 'Interrand Engineering Ltd',
     caption: 'Industrial Growth',
     locationTag: 'Abuja HQ, Nigeria',
@@ -23,7 +23,7 @@ export const HERO_SLIDES = [
     cta: 'Our Solutions'
   },
   {
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2000',
+    image: 'https://images.unsplash.com/photo-1590487988256-9ed24133863e?auto=format&fit=crop&q=80&w=2000',
     caption: 'Regional Impact',
     locationTag: 'Accra, Ghana',
     title: 'Sustainable Regional Infrastructure',
@@ -100,7 +100,7 @@ export const PROJECTS: Project[] = [
     title: 'Lagos Industrial Corridor',
     location: 'Lagos, Nigeria',
     category: 'Industrial',
-    imageUrl: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800'
   },
   {
     id: '2',
@@ -114,7 +114,7 @@ export const PROJECTS: Project[] = [
     title: 'Tema Port Infrastructure',
     location: 'Tema, Ghana',
     category: 'Civil',
-    imageUrl: 'https://images.unsplash.com/photo-1590487988256-9ed24133863e?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1487875948215-069cf478988a?auto=format&fit=crop&q=80&w=800'
   }
 ];
 

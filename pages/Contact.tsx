@@ -136,7 +136,7 @@ const Contact: React.FC = () => {
             <p className="text-slate-600 text-sm">Strategic offices in Abuja and Accra to serve the West African sub-region.</p>
           </div>
         </div>
-        <img src="https://picsum.photos/seed/map/1920/600?grayscale" className="w-full h-full object-cover" alt="Map area" />
+        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=1920" className="w-full h-full object-cover" alt="Map area" />
       </section>
     </div>
   );

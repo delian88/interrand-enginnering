@@ -9,7 +9,7 @@ const About: React.FC = () => {
       {/* Dynamic Header */}
       <div className="bg-slate-900 py-32 sm:py-48 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 scale-110">
-          <img src="https://images.unsplash.com/photo-1541976590-713941681591?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover" alt="Interrand Office" />
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover" alt="Interrand Office" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

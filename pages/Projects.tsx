@@ -95,7 +95,7 @@ const Projects: React.FC = () => {
               </div>
             </div>
             <div className="lg:w-1/2 relative min-h-[400px]">
-              <img src="https://picsum.photos/seed/ghana/800/600" alt="Ghana Projects" className="absolute inset-0 w-full h-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1541976590-713941681591?auto=format&fit=crop&q=80&w=1200" alt="Ghana Projects" className="absolute inset-0 w-full h-full object-cover" />
             </div>
           </div>
         </div>

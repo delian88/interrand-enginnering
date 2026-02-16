@@ -9,7 +9,9 @@ import {
   Settings,
   Building2,
   Zap,
-  MapPin
+  MapPin,
+  Play,
+  Activity
 } from 'lucide-react';
 import { SERVICES, HERO_SLIDES } from '../constants.tsx';
 
@@ -147,15 +149,15 @@ const Home: React.FC = () => {
               <div className="grid grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-4 sm:space-y-6">
                   <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl hover:scale-[1.02] transition-transform duration-500">
-                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Infrastructure" />
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Heavy Infrastructure" />
                   </div>
                   <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl hover:scale-[1.02] transition-transform duration-500">
-                    <img src="https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Construction" />
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Construction Site" />
                   </div>
                 </div>
                 <div className="pt-12 sm:pt-20">
                   <div className="aspect-[2/3] rounded-3xl overflow-hidden shadow-2xl hover:scale-[1.02] transition-transform duration-500">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Technical" />
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Technical Engineering" />
                   </div>
                 </div>
               </div>
@@ -201,6 +203,64 @@ const Home: React.FC = () => {
                 <Link to="/about" className="inline-flex items-center text-slate-900 font-black hover:text-amber-600 transition-all border-b-4 border-slate-900 hover:border-amber-500 pb-2 group text-lg uppercase tracking-widest">
                   Learn Our Full Story <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW: Operational Excellence Video Section */}
+      <section className="relative py-32 sm:py-48 overflow-hidden bg-slate-950">
+        <div className="absolute inset-0 z-0">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="w-full h-full object-cover opacity-40 scale-105"
+          >
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-large-building-construction-site-view-4842-large.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-transparent to-slate-950"></div>
+          <div className="absolute inset-0 bg-slate-950/20"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+            <div className="flex-1 reveal">
+              <div className="flex items-center gap-4 mb-8">
+                <span className="p-3 bg-amber-500/20 rounded-full text-amber-500 animate-pulse">
+                   <Activity size={24} />
+                </span>
+                <span className="text-amber-500 font-black uppercase tracking-[0.4em] text-xs">Live On-Site Activity</span>
+              </div>
+              <h2 className="text-4xl sm:text-6xl font-outfit font-bold text-white mb-8 leading-tight">
+                Engineering at the <br /> <span className="shining-text">Highest Caliber</span>
+              </h2>
+              <p className="text-xl text-slate-300 font-light leading-relaxed mb-10 max-w-xl">
+                Our operations are characterized by disciplined project delivery and rigorous adherence to international engineering standards, ensuring structural integrity in every build.
+              </p>
+              <div className="flex flex-wrap gap-12">
+                <div>
+                  <div className="text-4xl font-bold text-white mb-1">24/7</div>
+                  <div className="text-slate-500 text-xs uppercase tracking-widest font-black">Project Monitoring</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-bold text-amber-500 mb-1">100%</div>
+                  <div className="text-slate-500 text-xs uppercase tracking-widest font-black">Safety Compliance</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex-shrink-0 reveal" style={{ transitionDelay: '0.3s' }}>
+              <div className="relative group">
+                 <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full border-2 border-dashed border-white/20 p-4 animate-[spin_20s_linear_infinite] group-hover:border-amber-500 transition-colors"></div>
+                 <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-48 h-48 sm:w-56 sm:h-56 bg-white/5 backdrop-blur-3xl rounded-full flex flex-col items-center justify-center text-center p-8 border border-white/10 group-hover:scale-110 transition-transform duration-500">
+                       <Play className="text-amber-500 fill-amber-500 mb-4" size={32} />
+                       <span className="text-white text-xs font-black uppercase tracking-widest leading-tight">Operational <br /> Excellence</span>
+                    </div>
+                 </div>
               </div>
             </div>
           </div>
