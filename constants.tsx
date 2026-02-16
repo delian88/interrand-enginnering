@@ -15,28 +15,28 @@ import { Service, Leader, Project } from './types.ts';
 export const HERO_SLIDES = [
   {
     image: 'https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=2000',
-    welcome: 'Welcome to Interrand Engineering Ltd',
-    caption: 'Industrial Excellence',
-    locationTag: 'Lagos Industrial Zone, Nigeria',
-    title: 'Precision Engineering for Global Industrial Growth',
-    subtitle: 'Interrand Engineering Ltd delivers technically-driven excellence, fostering industrialization through world-class professional and financial expertise.',
-    cta: 'Our Engineering Solutions'
+    welcome: 'Interrand Engineering Ltd',
+    caption: 'Industrial Growth',
+    locationTag: 'Abuja HQ, Nigeria',
+    title: 'Engineering Global Industrial Growth',
+    subtitle: 'Technically-driven excellence fostering industrialization with world-class professional expertise.',
+    cta: 'Our Solutions'
   },
   {
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2000',
-    caption: 'Regional Connectivity',
-    locationTag: 'Greater Accra Infrastructure, Ghana',
-    title: 'Sustainable Infrastructure & Regional Impact',
-    subtitle: 'Bridging technical gaps across Nigeria and Ghana since 2009 with a legacy of disciplined execution and long-term asset value.',
-    cta: 'Explore Projects'
+    caption: 'Regional Impact',
+    locationTag: 'Accra, Ghana',
+    title: 'Sustainable Regional Infrastructure',
+    subtitle: 'Bridging technical gaps across West Africa with disciplined execution and long-term asset value.',
+    cta: 'View Projects'
   },
   {
     image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=2000',
     caption: 'Technical Mastery',
-    locationTag: 'Technical Support Hub, Tema',
-    title: 'Disciplined Execution. Technical Mastery.',
-    subtitle: 'Supporting critical sectors of the economy with structural integrity and a commitment to engineering standards across borders.',
-    cta: 'Learn About Our Vision'
+    locationTag: 'Technical Hub, Tema',
+    title: 'Mastery Across Borders',
+    subtitle: 'Supporting critical economic sectors with structural integrity and world-class engineering standards.',
+    cta: 'Our Vision'
   }
 ];
 
