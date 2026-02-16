@@ -11,7 +11,8 @@ import {
   Zap,
   MapPin,
   Play,
-  Activity
+  Activity,
+  Maximize2
 } from 'lucide-react';
 import { SERVICES, HERO_SLIDES } from '../constants.tsx';
 
@@ -131,10 +132,10 @@ const Home: React.FC = () => {
           </div>
           
           <div className="flex gap-3">
-            <button onClick={prevSlide} className="group p-4 bg-white/5 hover:bg-amber-500 text-white hover:text-slate-950 rounded-full transition-all duration-500 border border-white/10 backdrop-blur-md">
+            <button onClick={prevSlide} className="group p-4 bg-white/5 hover:bg-amber-500 text-white hover:text-slate-900 rounded-full transition-all duration-500 border border-white/10 backdrop-blur-md">
               <ChevronLeft size={20} className="group-active:scale-90" />
             </button>
-            <button onClick={nextSlide} className="group p-4 bg-white/5 hover:bg-amber-500 text-white hover:text-slate-950 rounded-full transition-all duration-500 border border-white/10 backdrop-blur-md">
+            <button onClick={nextSlide} className="group p-4 bg-white/5 hover:bg-amber-500 text-white hover:text-slate-900 rounded-full transition-all duration-500 border border-white/10 backdrop-blur-md">
               <ChevronRight size={20} className="group-active:scale-90" />
             </button>
           </div>
@@ -209,60 +210,50 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* NEW: Operational Excellence Video Section */}
-      <section className="relative py-32 sm:py-48 overflow-hidden bg-slate-950">
-        <div className="absolute inset-0 z-0">
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            className="w-full h-full object-cover opacity-40 scale-105"
-          >
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-large-building-construction-site-view-4842-large.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-transparent to-slate-950"></div>
-          <div className="absolute inset-0 bg-slate-950/20"></div>
-        </div>
-
+      {/* Project Showcase Section with YouTube Autoplay */}
+      <section className="py-24 sm:py-32 bg-slate-950 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-amber-500/5 blur-[120px] -z-0"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 mb-16 sm:mb-24">
             <div className="flex-1 reveal">
-              <div className="flex items-center gap-4 mb-8">
-                <span className="p-3 bg-amber-500/20 rounded-full text-amber-500 animate-pulse">
-                   <Activity size={24} />
-                </span>
-                <span className="text-amber-500 font-black uppercase tracking-[0.4em] text-xs">Live On-Site Activity</span>
-              </div>
-              <h2 className="text-4xl sm:text-6xl font-outfit font-bold text-white mb-8 leading-tight">
-                Engineering at the <br /> <span className="shining-text">Highest Caliber</span>
-              </h2>
-              <p className="text-xl text-slate-300 font-light leading-relaxed mb-10 max-w-xl">
-                Our operations are characterized by disciplined project delivery and rigorous adherence to international engineering standards, ensuring structural integrity in every build.
+              <h2 className="text-amber-500 font-black uppercase tracking-[0.4em] text-sm mb-6">Project Showcase</h2>
+              <h3 className="text-4xl sm:text-6xl font-outfit font-bold text-white mb-8 leading-tight">
+                Engineering <br /><span className="shining-text">Global Excellence</span>
+              </h3>
+              <p className="text-lg sm:text-xl text-slate-400 font-light leading-relaxed max-w-2xl">
+                Experience the technical depth and disciplined delivery that defines Interrand Engineering. Our projects are the pulse of regional industrial development.
               </p>
-              <div className="flex flex-wrap gap-12">
-                <div>
-                  <div className="text-4xl font-bold text-white mb-1">24/7</div>
-                  <div className="text-slate-500 text-xs uppercase tracking-widest font-black">Project Monitoring</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-amber-500 mb-1">100%</div>
-                  <div className="text-slate-500 text-xs uppercase tracking-widest font-black">Safety Compliance</div>
-                </div>
+            </div>
+            <div className="flex-shrink-0 hidden lg:block reveal" style={{ transitionDelay: '0.2s' }}>
+              <div className="w-40 h-40 border-2 border-white/10 rounded-full flex flex-col items-center justify-center p-8 text-center animate-[spin_15s_linear_infinite]">
+                 <Maximize2 className="text-amber-500 mb-2" size={24} />
+                 <span className="text-white/40 text-[10px] uppercase font-black tracking-widest">Structural Integrity</span>
               </div>
             </div>
+          </div>
 
-            <div className="flex-shrink-0 reveal" style={{ transitionDelay: '0.3s' }}>
-              <div className="relative group">
-                 <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full border-2 border-dashed border-white/20 p-4 animate-[spin_20s_linear_infinite] group-hover:border-amber-500 transition-colors"></div>
-                 <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-48 h-48 sm:w-56 sm:h-56 bg-white/5 backdrop-blur-3xl rounded-full flex flex-col items-center justify-center text-center p-8 border border-white/10 group-hover:scale-110 transition-transform duration-500">
-                       <Play className="text-amber-500 fill-amber-500 mb-4" size={32} />
-                       <span className="text-white text-xs font-black uppercase tracking-widest leading-tight">Operational <br /> Excellence</span>
-                    </div>
-                 </div>
-              </div>
-            </div>
+          <div className="reveal" style={{ transitionDelay: '0.3s' }}>
+             <div className="aspect-video w-full rounded-[2rem] overflow-hidden shadow-3xl bg-slate-900 border border-white/5 relative group">
+                <iframe 
+                  src="https://www.youtube.com/embed/73yHRPeMuqo?autoplay=1&mute=1&loop=1&playlist=73yHRPeMuqo&controls=0&modestbranding=1&rel=0&iv_load_policy=3&showinfo=0" 
+                  title="Interrand Engineering Showcase" 
+                  className="absolute inset-0 w-full h-full scale-[1.01]"
+                  allow="autoplay; encrypted-media" 
+                  allowFullScreen
+                ></iframe>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute bottom-10 left-10 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-4 group-hover:translate-y-0">
+                   <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center text-slate-900">
+                        <Play fill="currentColor" size={20} />
+                      </div>
+                      <div>
+                        <div className="text-white font-bold text-lg">Engineering in Action</div>
+                        <div className="text-amber-500/80 text-xs font-black uppercase tracking-widest">Global Industrial Reach</div>
+                      </div>
+                   </div>
+                </div>
+             </div>
           </div>
         </div>
       </section>
