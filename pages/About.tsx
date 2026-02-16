@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { LEADERSHIP, CORE_VALUES } from '../constants';
-import { Target, Eye, Shield, Users, CheckCircle2, Globe2, Award } from 'lucide-react';
+import { Target, Eye, Shield, Users, User, CheckCircle2, Globe2, Award } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
@@ -106,25 +106,25 @@ const About: React.FC = () => {
       {/* Management Section */}
       <section className="py-20 sm:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-amber-600 font-bold uppercase tracking-widest text-xs mb-4">Leadership</h2>
-            <h3 className="text-3xl sm:text-5xl font-outfit font-bold text-slate-900">The Minds Behind Interrand</h3>
-            <p className="mt-6 text-lg text-slate-500 font-light leading-relaxed">
-              Our company is driven by a strong and experienced management team, combining deep technical depth with structured execution.
+          <div className="text-center max-w-4xl mx-auto mb-20">
+            <h2 className="text-amber-600 font-bold uppercase tracking-widest text-xs mb-4">Executive Governance</h2>
+            <h3 className="text-3xl sm:text-5xl font-outfit font-bold text-slate-900 mb-6">Expert Leadership Team</h3>
+            <p className="mt-6 text-lg sm:text-xl text-slate-600 font-light leading-relaxed">
+              Guided by a distinguished executive leadership team, Interrand Engineering Ltd. maintains a steadfast commitment to corporate governance, technical innovation, and strategic cross-border development. Our management brings together decades of specialized engineering expertise and disciplined financial oversight to ensure every project exceeds global benchmarks.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 max-w-5xl mx-auto">
             {LEADERSHIP.map((leader, i) => (
               <div key={i} className="group text-center">
-                <div className="aspect-[4/5] sm:aspect-square rounded-[3rem] overflow-hidden mb-10 shadow-2xl relative">
-                  <img src={leader.imageUrl} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt={leader.name} />
-                  <div className="absolute inset-0 bg-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="aspect-square rounded-[3rem] bg-slate-50 border border-slate-100 flex items-center justify-center mb-10 shadow-inner group-hover:border-amber-500/30 transition-all duration-500 relative overflow-hidden">
+                  <User size={120} className="text-slate-300 group-hover:text-amber-500 transition-colors duration-500 transform group-hover:scale-110" strokeWidth={1} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
                 <div className="px-6">
                   <h4 className="text-3xl font-bold text-slate-900 mb-2">{leader.name}</h4>
                   <p className="text-amber-600 font-bold uppercase tracking-widest text-sm mb-6">{leader.role}</p>
-                  <p className="text-slate-600 italic leading-relaxed font-light">"{leader.bio}"</p>
+                  <p className="text-slate-600 italic leading-relaxed font-light text-base sm:text-lg">"{leader.bio}"</p>
                 </div>
               </div>
             ))}

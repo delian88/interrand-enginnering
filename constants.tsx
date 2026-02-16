@@ -76,14 +76,14 @@ export const LEADERSHIP: Leader[] = [
   {
     name: 'David Omonije',
     role: 'Managing Director / CEO',
-    bio: 'A strategic visionary with deep roots in engineering management, leading Interrand\'s expansion across West Africa.',
-    imageUrl: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=400'
+    bio: 'A visionary strategist in civil and structural engineering with extensive experience in leading high-impact infrastructure projects across West Africa.',
+    imageUrl: ''
   },
   {
     name: 'Dr. Benjamin Abimbola Adigun',
     role: 'Chairman / Executive Director',
-    bio: 'An academic and industry veteran, providing the technical depth and disciplined leadership that defines Interrand.',
-    imageUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400&h=400'
+    bio: 'A distinguished industrial veteran providing advanced technical depth and disciplined leadership to secure long-term value for critical infrastructure assets.',
+    imageUrl: ''
   }
 ];
 
