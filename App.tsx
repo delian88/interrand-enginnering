@@ -15,13 +15,12 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false);
     if (isOpen) {
@@ -45,7 +44,7 @@ const Navbar = () => {
   const isLightNav = scrolled || location.pathname !== '/';
 
   return (
-    <nav className={`fixed w-full z-[100] transition-all duration-500 ${scrolled ? 'bg-white shadow-xl py-2' : 'bg-transparent py-4 md:py-6'}`}>
+    <nav className={`fixed w-full z-[100] transition-all duration-300 ${scrolled ? 'bg-white shadow-xl py-3' : 'bg-transparent py-5 md:py-8'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center group relative z-[110]">
@@ -54,13 +53,13 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-sm font-semibold transition-all hover:text-amber-500 relative py-2 ${
+                className={`text-sm font-bold transition-all hover:text-amber-500 relative py-2 ${
                   isLightNav ? 'text-slate-600' : 'text-white/90'
                 } ${location.pathname === link.path ? 'text-amber-500' : ''}`}
               >
@@ -78,7 +77,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile Toggle */}
+          {/* Mobile Button */}
           <div className="md:hidden relative z-[110]">
             <button 
               onClick={toggleMenu} 
@@ -90,9 +89,9 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      <div className={`md:hidden fixed inset-0 bg-white z-[100] transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'}`}>
-        <div className="flex flex-col h-full pt-24 px-8 pb-12 overflow-y-auto">
+      {/* Mobile Menu */}
+      <div className={`md:hidden fixed inset-0 bg-white z-[100] transition-transform duration-500 ease-in-out transform ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="flex flex-col h-full pt-28 px-8 pb-12 overflow-y-auto">
           <div className="space-y-6">
             {navLinks.map((link) => (
               <Link
@@ -106,17 +105,17 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          <div className="mt-12 pt-8 border-t border-slate-100">
+          <div className="mt-auto pt-10 border-t border-slate-100">
             <Link 
               to="/contact" 
               className="block w-full text-center py-5 bg-amber-500 text-white rounded-2xl font-bold text-xl shadow-xl shadow-amber-500/20"
             >
               Request a Consultation
             </Link>
-            <div className="mt-12 flex justify-center space-x-6">
-              <a href="#" className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-amber-500 hover:text-white transition-all"><Linkedin size={24} /></a>
-              <a href="#" className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-amber-500 hover:text-white transition-all"><Facebook size={24} /></a>
-              <a href="#" className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-amber-500 hover:text-white transition-all"><Twitter size={24} /></a>
+            <div className="mt-8 flex justify-center space-x-6 text-slate-400">
+              <Linkedin size={24} />
+              <Facebook size={24} />
+              <Twitter size={24} />
             </div>
           </div>
         </div>
@@ -127,9 +126,9 @@ const Navbar = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-slate-300 pt-20 pb-10">
+    <footer className="bg-slate-900 text-slate-300 pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="space-y-6">
             <h3 className="text-2xl font-outfit font-bold text-white tracking-tight">
               INTERRAND<span className="text-amber-500">ENGINEERING</span>
@@ -137,7 +136,7 @@ const Footer = () => {
             <p className="text-sm leading-relaxed text-slate-400">
               A core engineering subsidiary within the Interrand Group, established for global impact and technically driven excellence since 2009.
             </p>
-            <div className="flex space-x-3">
+            <div className="flex space-x-4">
               {[Facebook, Linkedin, Twitter].map((Icon, i) => (
                 <a key={i} href="#" className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-amber-500 hover:text-white transition-all"><Icon size={20} /></a>
               ))}
@@ -145,33 +144,33 @@ const Footer = () => {
           </div>
 
           <div className="lg:pl-8">
-            <h4 className="text-lg font-bold text-white mb-6">Explore</h4>
-            <ul className="space-y-3">
-              {['Home', 'About', 'Services', 'Projects', 'Contact'].map((item) => (
-                <li key={item}><Link to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} className="hover:text-amber-500 transition-colors text-sm">{item}</Link></li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-bold text-white mb-6">Expertise</h4>
-            <ul className="space-y-3">
-              {['Civil Engineering', 'Mechanical Systems', 'Power & Electrical', 'Industrial Support', 'Oil & Gas Services'].map((item) => (
-                <li key={item} className="flex items-center text-sm text-slate-400"><ChevronRight size={14} className="text-amber-500 mr-2" /> {item}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-bold text-white mb-6">Get In Touch</h4>
+            <h4 className="text-lg font-bold text-white mb-8">Navigation</h4>
             <ul className="space-y-4">
+              {['Home', 'About', 'Services', 'Projects', 'Contact'].map((item) => (
+                <li key={item}><Link to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} className="hover:text-amber-500 transition-colors text-sm font-medium">{item}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-bold text-white mb-8">Capabilities</h4>
+            <ul className="space-y-4">
+              {['Civil Engineering', 'Mechanical Systems', 'Power & Electrical', 'Industrial Support', 'Oil & Gas Services'].map((item) => (
+                <li key={item} className="flex items-center text-sm text-slate-400 font-medium"><ChevronRight size={14} className="text-amber-500 mr-2" /> {item}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-bold text-white mb-8">Regional Offices</h4>
+            <ul className="space-y-6">
               <li className="flex items-start text-sm">
                 <MapPin size={18} className="text-amber-500 mr-3 mt-1 flex-shrink-0" />
-                <span><span className="block font-bold text-white mb-0.5">Nigeria Office</span>Victoria Island, Lagos</span>
+                <span><span className="block font-bold text-white mb-1">Nigeria</span>Victoria Island, Lagos</span>
               </li>
               <li className="flex items-start text-sm">
                 <Globe size={18} className="text-amber-500 mr-3 mt-1 flex-shrink-0" />
-                <span><span className="block font-bold text-white mb-0.5">Ghana Office</span>Airport Residential Area, Accra</span>
+                <span><span className="block font-bold text-white mb-1">Ghana</span>Airport Residential Area, Accra</span>
               </li>
               <li className="flex items-center text-sm">
                 <Mail size={18} className="text-amber-500 mr-3 flex-shrink-0" />
@@ -180,12 +179,11 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="border-t border-slate-800 pt-10 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+        <div className="border-t border-slate-800 pt-12 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-6">
           <p>© {new Date().getFullYear()} Interrand Engineering Ltd (RC 831090). All Rights Reserved.</p>
-          <div className="flex space-x-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
-            <a href="#" className="hover:text-white transition-colors">Cookies</a>
+          <div className="flex space-x-8">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
@@ -193,18 +191,9 @@ const Footer = () => {
   );
 };
 
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [pathname]);
-  return null;
-};
-
 const App: React.FC = () => {
   return (
     <Router>
-      <ScrollToTop />
       <div className="min-h-screen flex flex-col overflow-x-hidden">
         <Navbar />
         <main className="flex-grow">

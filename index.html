@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Interrand Engineering Ltd - Technically Driven Excellence</title>
+    <title>Interrand Engineering Ltd | Technically Driven Excellence</title>
+    <meta name="description" content="Interrand Engineering Ltd (RC 831090) - A core engineering subsidiary of Interrand Group specializing in industrialization and infrastructure across Nigeria and Ghana.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,20 +22,15 @@
         html, body {
             width: 100%;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
         body {
             font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
         .font-outfit {
             font-family: 'Outfit', sans-serif;
-        }
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         /* Custom scrollbar */
         ::-webkit-scrollbar {
@@ -49,14 +45,6 @@
         }
         ::-webkit-scrollbar-thumb:hover {
           background: #94a3b8;
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
         }
     </style>
 <script type="importmap">
@@ -73,5 +61,6 @@
 </head>
 <body class="bg-slate-50 text-slate-900 selection:bg-amber-100 selection:text-amber-900">
     <div id="root"></div>
+    <script type="module" src="index.tsx"></script>
 </body>
 </html>
