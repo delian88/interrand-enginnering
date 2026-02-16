@@ -7,6 +7,8 @@ import About from './pages/About.tsx';
 import Services from './pages/Services.tsx';
 import Projects from './pages/Projects.tsx';
 import Contact from './pages/Contact.tsx';
+import BrandLogo from './components/BrandLogo.tsx';
+import LoadingScreen from './components/LoadingScreen.tsx';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,9 +50,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center group relative z-[110]">
-            <div className={`text-xl sm:text-2xl font-outfit font-bold tracking-tight transition-colors duration-300 ${isLightNav ? 'text-slate-900' : 'text-white'}`}>
-              INTERRAND<span className="text-amber-500">ENGINEERING</span>
-            </div>
+            <BrandLogo isLight={!isLightNav} size="sm" />
           </Link>
 
           {/* Desktop Nav */}
@@ -130,9 +130,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="space-y-6">
-            <h3 className="text-2xl font-outfit font-bold text-white tracking-tight">
-              INTERRAND<span className="text-amber-500">ENGINEERING</span>
-            </h3>
+            <BrandLogo isLight size="sm" />
             <p className="text-sm leading-relaxed text-slate-400">
               A core engineering subsidiary within the Interrand Group, established for global impact and technically driven excellence since 2009.
             </p>
@@ -166,15 +164,19 @@ const Footer = () => {
             <ul className="space-y-6">
               <li className="flex items-start text-sm">
                 <MapPin size={18} className="text-amber-500 mr-3 mt-1 flex-shrink-0" />
-                <span><span className="block font-bold text-white mb-1">Nigeria</span>Victoria Island, Lagos</span>
+                <span><span className="block font-bold text-white mb-1">Nigeria HQ</span>Plot 1124, Gudu, Abuja</span>
               </li>
               <li className="flex items-start text-sm">
                 <Globe size={18} className="text-amber-500 mr-3 mt-1 flex-shrink-0" />
-                <span><span className="block font-bold text-white mb-1">Ghana</span>Airport Residential Area, Accra</span>
+                <span><span className="block font-bold text-white mb-1">Ghana Office</span>Airport Residential Area, Accra</span>
+              </li>
+              <li className="flex items-center text-sm">
+                <Phone size={18} className="text-amber-500 mr-3 flex-shrink-0" />
+                <span>0806 352 9436</span>
               </li>
               <li className="flex items-center text-sm">
                 <Mail size={18} className="text-amber-500 mr-3 flex-shrink-0" />
-                <span>info@interrandengineering.com</span>
+                <span>info@interrandgroup.com</span>
               </li>
             </ul>
           </div>
@@ -200,10 +202,19 @@ const ScrollToTop = () => {
 };
 
 const App: React.FC = () => {
+  const [appReady, setAppReady] = useState(false);
+
+  useEffect(() => {
+    // Initializing state/preloading
+    const timer = setTimeout(() => setAppReady(true), 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col overflow-x-hidden">
+      {!appReady && <LoadingScreen />}
+      <div className={`min-h-screen flex flex-col overflow-x-hidden transition-opacity duration-1000 ${appReady ? 'opacity-100' : 'opacity-0'}`}>
         <Navbar />
         <main className="flex-grow">
           <Routes>

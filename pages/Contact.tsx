@@ -35,8 +35,8 @@ const Contact: React.FC = () => {
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-lg">Headquarters</h4>
-                    <p className="text-slate-600">Victoria Island, Lagos, Nigeria</p>
+                    <h4 className="font-bold text-slate-900 text-lg">Nigeria Headquarters</h4>
+                    <p className="text-slate-600 max-w-xs">Plot 1124, Beside Gudu District Library Gudu, Abuja, Nigeria, 900104</p>
                     <p className="text-amber-600 text-sm font-bold mt-1">RC No: 831090</p>
                   </div>
                 </div>
@@ -51,12 +51,20 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="flex items-start">
                   <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mr-6 text-slate-600 flex-shrink-0">
+                    <Phone size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-lg">Phone</h4>
+                    <p className="text-slate-600">0806 352 9436</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mr-6 text-slate-600 flex-shrink-0">
                     <Mail size={24} />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 text-lg">Email</h4>
-                    <p className="text-slate-600">info@interrandengineering.com</p>
-                    <p className="text-slate-600">projects@interrandengineering.com</p>
+                    <p className="text-slate-600">info@interrandgroup.com</p>
                   </div>
                 </div>
               </div>
@@ -125,7 +133,7 @@ const Contact: React.FC = () => {
           <div className="bg-white p-6 rounded-2xl shadow-2xl z-10 text-center max-w-sm">
             <MapPin size={32} className="text-amber-500 mx-auto mb-4" />
             <h4 className="font-bold text-slate-900 mb-2">Regional Engineering Centers</h4>
-            <p className="text-slate-600 text-sm">Strategic offices in Lagos and Accra to serve the West African sub-region.</p>
+            <p className="text-slate-600 text-sm">Strategic offices in Abuja and Accra to serve the West African sub-region.</p>
           </div>
         </div>
         <img src="https://picsum.photos/seed/map/1920/600?grayscale" className="w-full h-full object-cover" alt="Map area" />
