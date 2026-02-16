@@ -1,0 +1,7 @@
+{
+  "name": "Interrand Engineering Ltd",
+  "description": "A world-class engineering subsidiary of the Interrand Group, specializing in industrialization and infrastructure across Nigeria and Ghana.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
