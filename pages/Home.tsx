@@ -61,13 +61,13 @@ const Home: React.FC = () => {
                   </div>
                 )}
 
-                {/* Simplified Punchy Headline */}
+                {/* Simplified Punchy Headline with Shining Effect */}
                 <div className="mb-6 sm:mb-8 overflow-hidden">
                   <h1 className={`text-4xl sm:text-6xl md:text-7xl font-outfit font-bold text-white leading-[1.1] tracking-tighter transition-all duration-1000 delay-300 ${index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-24 opacity-0'}`}>
                     {slide.title.split(' ').map((word: string, i: number) => (
                       <span key={i} className="inline-block mr-[0.2em] last:mr-0">
                         {word === 'Industrial' || word === 'Regional' || word === 'Mastery' ? (
-                          <span className="text-amber-500">{word}</span>
+                          <span className="shining-text">{word}</span>
                         ) : word}
                       </span>
                     ))}
@@ -85,7 +85,7 @@ const Home: React.FC = () => {
                 <div className={`flex flex-col sm:flex-row gap-5 transition-all duration-1000 delay-700 ${index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
                   <Link 
                     to="/services" 
-                    className="group relative inline-flex items-center justify-center px-10 py-5 font-black text-slate-950 transition-all duration-300 bg-amber-500 rounded-sm hover:bg-white shadow-2xl uppercase tracking-widest text-xs"
+                    className="group relative inline-flex items-center justify-center px-10 py-5 font-black text-slate-950 transition-all duration-300 bg-amber-500 rounded-sm hover:bg-white shadow-2xl uppercase tracking-widest text-xs glow-hover"
                   >
                     <span className="relative z-10 flex items-center">
                       Expertise
@@ -143,33 +143,33 @@ const Home: React.FC = () => {
       <section className="py-24 sm:py-32 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div className="relative group">
+            <div className="relative group reveal">
               <div className="grid grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-4 sm:space-y-6">
-                  <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+                  <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl hover:scale-[1.02] transition-transform duration-500">
                     <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Infrastructure" />
                   </div>
-                  <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                  <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl hover:scale-[1.02] transition-transform duration-500">
                     <img src="https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Construction" />
                   </div>
                 </div>
                 <div className="pt-12 sm:pt-20">
-                  <div className="aspect-[2/3] rounded-3xl overflow-hidden shadow-2xl">
+                  <div className="aspect-[2/3] rounded-3xl overflow-hidden shadow-2xl hover:scale-[1.02] transition-transform duration-500">
                     <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Technical" />
                   </div>
                 </div>
               </div>
-              <div className="absolute -bottom-8 -left-8 bg-slate-900 text-white p-8 rounded-[2rem] shadow-3xl hidden xl:block">
+              <div className="absolute -bottom-8 -left-8 bg-slate-900 text-white p-8 rounded-[2rem] shadow-3xl hidden xl:block float">
                 <div className="text-3xl font-bold text-amber-500 mb-1 font-outfit">RC 831090</div>
                 <div className="text-[10px] uppercase tracking-[0.4em] font-black opacity-60">Certified Excellence</div>
               </div>
             </div>
 
-            <div className="space-y-10">
+            <div className="space-y-10 reveal" style={{ transitionDelay: '0.2s' }}>
               <div className="space-y-6">
                 <span className="inline-block px-4 py-1.5 bg-amber-50 text-amber-600 rounded-lg text-xs font-black uppercase tracking-widest">About the Company</span>
                 <h2 className="text-3xl sm:text-5xl font-outfit font-bold text-slate-900 leading-[1.1]">
-                  Driving <span className="text-amber-500">Industrialization</span> Across West Africa
+                  Driving <span className="shining-text">Industrialization</span> Across West Africa
                 </h2>
                 <p className="text-lg text-slate-600 leading-relaxed font-light">
                   Interrand Engineering Ltd is a premier subsidiary of the Interrand Group, founded with a clear mandate to catalyze structural growth through technical, professional, and financial expertise.
@@ -177,8 +177,8 @@ const Home: React.FC = () => {
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div className="p-8 bg-slate-50 rounded-2xl border border-slate-100 flex items-start gap-4 hover:shadow-lg transition-shadow">
-                  <div className="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 flex-shrink-0">
+                <div className="p-8 bg-slate-50 rounded-2xl border border-slate-100 flex items-start gap-4 hover:shadow-lg transition-all duration-300 hover:border-amber-500/30">
+                  <div className="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 flex-shrink-0 group-hover:scale-110 transition-transform">
                     <TrendingUp size={28} />
                   </div>
                   <div>
@@ -186,8 +186,8 @@ const Home: React.FC = () => {
                     <p className="text-sm text-slate-500">Supporting critical economic sectors at scale.</p>
                   </div>
                 </div>
-                <div className="p-8 bg-slate-50 rounded-2xl border border-slate-100 flex items-start gap-4 hover:shadow-lg transition-shadow">
-                  <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0">
+                <div className="p-8 bg-slate-50 rounded-2xl border border-slate-100 flex items-start gap-4 hover:shadow-lg transition-all duration-300 hover:border-blue-500/30">
+                  <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0 group-hover:scale-110 transition-transform">
                     <Target size={28} />
                   </div>
                   <div>
@@ -210,7 +210,7 @@ const Home: React.FC = () => {
       {/* Expertise Section */}
       <section className="py-24 sm:py-32 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto mb-20">
+          <div className="text-center max-w-4xl mx-auto mb-20 reveal">
             <h2 className="text-amber-600 font-black uppercase tracking-[0.4em] text-sm mb-6">Expertise</h2>
             <h3 className="text-3xl sm:text-6xl font-outfit font-bold text-slate-900 mb-8 leading-tight">Engineering Excellence</h3>
             <p className="text-lg sm:text-xl text-slate-500 font-light leading-relaxed">
@@ -219,11 +219,11 @@ const Home: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-            {SERVICES.map((s) => {
+            {SERVICES.map((s, idx) => {
               const IconMap: any = { Building2, Settings, Zap, Factory: Building2, Droplets: Building2, Truck: Building2 };
               const Icon = IconMap[s.icon] || Settings;
               return (
-                <div key={s.id} className="group bg-white p-10 sm:p-12 rounded-[2.5rem] border border-slate-100 hover:border-amber-500/20 hover:shadow-3xl transition-all duration-700 transform hover:-translate-y-4">
+                <div key={s.id} className="group bg-white p-10 sm:p-12 rounded-[2.5rem] border border-slate-100 hover:border-amber-500/20 hover:shadow-3xl transition-all duration-700 transform hover:-translate-y-4 reveal" style={{ transitionDelay: `${idx * 0.1}s` }}>
                   <div className="w-20 h-20 bg-slate-50 text-amber-500 rounded-3xl flex items-center justify-center mb-10 group-hover:bg-amber-500 group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-amber-500/30">
                     <Icon size={36} />
                   </div>
@@ -248,10 +248,10 @@ const Home: React.FC = () => {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-6xl mx-auto text-center">
-            <h3 className="text-4xl sm:text-6xl md:text-7xl font-outfit font-bold mb-10 leading-[1.1] tracking-tighter">
-              Regional <span className="text-amber-500">Infrastructure</span> Leadership
+            <h3 className="text-4xl sm:text-6xl md:text-7xl font-outfit font-bold mb-10 leading-[1.1] tracking-tighter reveal">
+              Regional <span className="shining-text">Infrastructure</span> Leadership
             </h3>
-            <p className="text-xl sm:text-2xl text-slate-300 mb-20 font-light leading-relaxed max-w-4xl mx-auto">
+            <p className="text-xl sm:text-2xl text-slate-300 mb-20 font-light leading-relaxed max-w-4xl mx-auto reveal" style={{ transitionDelay: '0.2s' }}>
               With full operational hubs in Nigeria and Ghana, we deliver technical depth to the critical industrial sectors of West Africa.
             </p>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10">
@@ -261,7 +261,7 @@ const Home: React.FC = () => {
                 { label: 'RC Number', val: '831090' },
                 { label: 'Status', val: 'Active' }
               ].map((stat, i) => (
-                <div key={i} className="group p-8 rounded-[2rem] bg-white/5 border border-white/5 backdrop-blur-xl hover:bg-white/10 transition-all duration-500">
+                <div key={i} className="group p-8 rounded-[2rem] bg-white/5 border border-white/5 backdrop-blur-xl hover:bg-white/10 transition-all duration-500 reveal" style={{ transitionDelay: `${i * 0.1 + 0.3}s` }}>
                   <div className="text-3xl sm:text-5xl font-black text-amber-500 mb-2 font-outfit group-hover:scale-105 transition-transform">{stat.val}</div>
                   <div className="text-[10px] sm:text-xs uppercase tracking-[0.4em] text-slate-500 font-black group-hover:text-slate-300 transition-colors">{stat.label}</div>
                 </div>
@@ -273,7 +273,7 @@ const Home: React.FC = () => {
 
       {/* CTA Section */}
       <section className="py-24 sm:py-32 px-4 bg-white">
-        <div className="max-w-6xl mx-auto bg-amber-500 rounded-[3rem] p-12 sm:p-24 text-center shadow-3xl shadow-amber-500/30 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto bg-amber-500 rounded-[3rem] p-12 sm:p-24 text-center shadow-3xl shadow-amber-500/30 relative overflow-hidden reveal">
           <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 rounded-full translate-x-1/3 -translate-y-1/3 blur-[80px]"></div>
           <div className="relative z-10">
             <h3 className="text-4xl sm:text-6xl md:text-7xl font-outfit font-bold text-slate-900 mb-10 leading-[1] tracking-tighter">
@@ -283,7 +283,7 @@ const Home: React.FC = () => {
               Partner with Interrand Engineering for world-class technical execution and structural innovation that lasts.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link to="/contact" className="w-full sm:w-auto px-12 py-6 bg-slate-900 text-white rounded-sm font-black text-lg uppercase tracking-widest hover:bg-slate-800 transition-all shadow-2xl hover:scale-105 active:scale-95">
+              <Link to="/contact" className="w-full sm:w-auto px-12 py-6 bg-slate-900 text-white rounded-sm font-black text-lg uppercase tracking-widest hover:bg-slate-800 transition-all shadow-2xl hover:scale-105 active:scale-95 glow-hover">
                 Start Project
               </Link>
               <Link to="/projects" className="w-full sm:w-auto px-12 py-6 bg-white/10 text-slate-950 border-2 border-slate-900/10 rounded-sm font-black text-lg uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all backdrop-blur-md">
