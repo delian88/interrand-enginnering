@@ -61,17 +61,17 @@ const Navbar = () => {
                 to={link.path}
                 className={`text-sm font-bold transition-all hover:text-amber-500 relative py-2 ${
                   isLightNav ? 'text-slate-600' : 'text-white/90'
-                } ${location.pathname === link.path ? 'text-amber-500' : ''}`}
+                } ${location.pathname === link.path ? 'text-[#f07e26]' : ''}`}
               >
                 {link.name}
                 {location.pathname === link.path && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-amber-500 rounded-full"></span>
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#f07e26] rounded-full"></span>
                 )}
               </Link>
             ))}
             <Link 
               to="/contact" 
-              className="px-6 py-2.5 bg-amber-500 text-white rounded-lg font-bold hover:bg-amber-600 transition-all shadow-lg hover:shadow-amber-500/30 text-sm"
+              className="px-6 py-2.5 bg-[#f07e26] text-white rounded-lg font-bold hover:bg-amber-600 transition-all shadow-lg hover:shadow-amber-500/30 text-sm"
             >
               Get a Quote
             </Link>
@@ -98,7 +98,7 @@ const Navbar = () => {
                 key={link.name}
                 to={link.path}
                 className={`block text-3xl font-outfit font-bold transition-colors ${
-                  location.pathname === link.path ? 'text-amber-500' : 'text-slate-800'
+                  location.pathname === link.path ? 'text-[#f07e26]' : 'text-slate-800'
                 }`}
               >
                 {link.name}
@@ -108,7 +108,7 @@ const Navbar = () => {
           <div className="mt-auto pt-10 border-t border-slate-100">
             <Link 
               to="/contact" 
-              className="block w-full text-center py-5 bg-amber-500 text-white rounded-2xl font-bold text-xl shadow-xl shadow-amber-500/20"
+              className="block w-full text-center py-5 bg-[#f07e26] text-white rounded-2xl font-bold text-xl shadow-xl shadow-amber-500/20"
             >
               Request a Consultation
             </Link>
@@ -136,7 +136,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               {[Facebook, Linkedin, Twitter].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-amber-500 hover:text-white transition-all"><Icon size={20} /></a>
+                <a key={i} href="#" className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-[#f07e26] hover:text-white transition-all"><Icon size={20} /></a>
               ))}
             </div>
           </div>
@@ -145,7 +145,7 @@ const Footer = () => {
             <h4 className="text-lg font-bold text-white mb-8">Navigation</h4>
             <ul className="space-y-4">
               {['Home', 'About', 'Services', 'Projects', 'Contact'].map((item) => (
-                <li key={item}><Link to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} className="hover:text-amber-500 transition-colors text-sm font-medium">{item}</Link></li>
+                <li key={item}><Link to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} className="hover:text-[#f07e26] transition-colors text-sm font-medium">{item}</Link></li>
               ))}
             </ul>
           </div>
@@ -154,7 +154,7 @@ const Footer = () => {
             <h4 className="text-lg font-bold text-white mb-8">Capabilities</h4>
             <ul className="space-y-4">
               {['Civil Engineering', 'Mechanical Systems', 'Power & Electrical', 'Industrial Support', 'Oil & Gas Services'].map((item) => (
-                <li key={item} className="flex items-center text-sm text-slate-400 font-medium"><ChevronRight size={14} className="text-amber-500 mr-2" /> {item}</li>
+                <li key={item} className="flex items-center text-sm text-slate-400 font-medium"><ChevronRight size={14} className="text-[#f07e26] mr-2" /> {item}</li>
               ))}
             </ul>
           </div>
@@ -163,19 +163,19 @@ const Footer = () => {
             <h4 className="text-lg font-bold text-white mb-8">Regional Offices</h4>
             <ul className="space-y-6">
               <li className="flex items-start text-sm">
-                <MapPin size={18} className="text-amber-500 mr-3 mt-1 flex-shrink-0" />
+                <MapPin size={18} className="text-[#f07e26] mr-3 mt-1 flex-shrink-0" />
                 <span><span className="block font-bold text-white mb-1">Nigeria HQ</span>Plot 1124, Gudu, Abuja</span>
               </li>
               <li className="flex items-start text-sm">
-                <Globe size={18} className="text-amber-500 mr-3 mt-1 flex-shrink-0" />
+                <Globe size={18} className="text-[#f07e26] mr-3 mt-1 flex-shrink-0" />
                 <span><span className="block font-bold text-white mb-1">Ghana Office</span>Airport Residential Area, Accra</span>
               </li>
               <li className="flex items-center text-sm">
-                <Phone size={18} className="text-amber-500 mr-3 flex-shrink-0" />
+                <Phone size={18} className="text-[#f07e26] mr-3 flex-shrink-0" />
                 <span>0806 352 9436</span>
               </li>
               <li className="flex items-center text-sm">
-                <Mail size={18} className="text-amber-500 mr-3 flex-shrink-0" />
+                <Mail size={18} className="text-[#f07e26] mr-3 flex-shrink-0" />
                 <span>info@interrandgroup.com</span>
               </li>
             </ul>
