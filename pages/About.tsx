@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { LEADERSHIP, CORE_VALUES } from '../constants';
+import { LEADERSHIP, CORE_VALUES } from '../constants.tsx';
 import { Target, Eye, Shield, Users, User, CheckCircle2, Globe2, Award } from 'lucide-react';
 
 const About: React.FC = () => {

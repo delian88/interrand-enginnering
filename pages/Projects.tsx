@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { PROJECTS } from '../constants';
+import { PROJECTS } from '../constants.tsx';
 import { MapPin, ArrowRight } from 'lucide-react';
 
 const Projects: React.FC = () => {

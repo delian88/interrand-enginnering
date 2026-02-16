@@ -16,9 +16,10 @@ import {
   Settings,
   Building2,
   Zap,
-  Factory
+  Factory,
+  MapPin
 } from 'lucide-react';
-import { SERVICES, HERO_SLIDES, CORE_VALUES } from '../constants';
+import { SERVICES, HERO_SLIDES, CORE_VALUES } from '../constants.tsx';
 
 const Home: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -37,32 +38,58 @@ const Home: React.FC = () => {
     <div className="w-full">
       {/* Responsive Hero Slider */}
       <section className="relative h-[85vh] sm:h-screen min-h-[600px] overflow-hidden bg-slate-900">
-        {HERO_SLIDES.map((slide, index) => (
+        {HERO_SLIDES.map((slide: any, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
               index === currentSlide ? 'opacity-100 visible z-10' : 'opacity-0 invisible z-0'
             }`}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/40 to-transparent z-10"></div>
+            {/* Legibility Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/50 to-transparent z-10"></div>
+            
             <img 
               src={slide.image} 
               alt={slide.title} 
               className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-[10s]"
               style={{ transform: index === currentSlide ? 'scale(1)' : 'scale(1.1)' }}
             />
+
+            {/* Top Corner Badge Caption */}
+            <div className={`absolute top-28 right-4 sm:right-12 z-20 transition-all duration-1000 delay-300 ${index === currentSlide ? 'translate-y-0 opacity-100' : '-translate-y-8 opacity-0'}`}>
+               <div className="hidden sm:flex items-center gap-3 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full">
+                 <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
+                 <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/80">Active Operations</span>
+               </div>
+            </div>
+
+            {/* Main Hero Content */}
             <div className="relative z-20 h-full flex items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className={`max-w-4xl transition-all duration-1000 delay-300 ${index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-                <div className="inline-flex items-center px-4 py-1.5 bg-amber-500 text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] rounded-sm mb-6 sm:mb-8 shadow-2xl">
-                  Engineering Excellence Since 2009
+              <div className="max-w-4xl">
+                {/* Welcome Message (Specific for first slide) */}
+                {slide.welcome && (
+                  <div className={`text-amber-500 font-outfit font-bold text-lg sm:text-2xl mb-4 transition-all duration-1000 delay-100 ${index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
+                    {slide.welcome}
+                  </div>
+                )}
+
+                {/* Primary Caption Badge */}
+                <div className={`inline-flex items-center px-4 py-1.5 bg-amber-500 text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] rounded-sm mb-6 sm:mb-8 shadow-2xl transition-all duration-700 delay-200 ${index === currentSlide ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>
+                  {slide.caption}
                 </div>
-                <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-outfit font-bold text-white mb-6 sm:mb-8 leading-[1.1] sm:leading-tight">
+                
+                {/* Title */}
+                <h1 className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-outfit font-bold text-white mb-6 sm:mb-8 leading-[1.1] sm:leading-tight transition-all duration-1000 delay-400 drop-shadow-lg ${index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                   {slide.title}
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-200 mb-10 sm:mb-14 font-light max-w-2xl leading-relaxed opacity-90">
+                
+                {/* Subtitle */}
+                <p className={`text-base sm:text-lg md:text-xl lg:text-2xl text-slate-200 mb-10 sm:mb-14 font-light max-w-2xl leading-relaxed opacity-90 transition-all duration-1000 delay-600 ${index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                   {slide.subtitle}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                
+                {/* Action Buttons */}
+                <div className={`flex flex-col sm:flex-row gap-4 sm:gap-6 transition-all duration-1000 delay-800 ${index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                   <Link 
                     to="/services" 
                     className="w-full sm:w-auto px-10 py-5 bg-amber-500 text-white rounded-xl font-bold text-base sm:text-lg hover:bg-amber-600 transition-all flex items-center justify-center group shadow-2xl shadow-amber-500/20"
@@ -78,6 +105,15 @@ const Home: React.FC = () => {
                   </Link>
                 </div>
               </div>
+            </div>
+
+            {/* Bottom Floating Location Caption */}
+            <div className={`absolute bottom-24 right-4 sm:right-12 z-20 transition-all duration-1000 delay-700 hidden lg:flex items-center gap-3 ${index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+               <div className="h-px w-12 bg-amber-500/50"></div>
+               <div className="flex items-center text-white/60 text-xs font-bold tracking-widest uppercase">
+                 <MapPin size={14} className="text-amber-500 mr-2" />
+                 {slide.locationTag}
+               </div>
             </div>
           </div>
         ))}
